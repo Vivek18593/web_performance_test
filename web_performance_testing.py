@@ -5,73 +5,88 @@ import os
 os.system('color')
 
 def set_hostname(url):
+    runCheck = input(colored("\nChoose an opiton (1 or 2): ",'green'))
+    print(colored("\n1. Default run",'yellow'))
+    print(colored("\n2. Other",'yellow'))
     global url_input
-    for _ in url:
-        if url[4] == 's' and url[5] == ':' and url[-4] == '.':
-            hostname = url.replace('https://www.','')
-            url_input = url
-            break
+    if runCheck == '1':
+        for _ in url:
+            if url[4] == 's' and url[5] == ':' and url[-4] == '.':
+                hostname = url.replace('https://www.','')
+                url_input = url
+                break
 
-        if url[4] == 's' and url[5] == ':' and url[-3] == '.':
-            hostname = url.replace('https://www.','')
-            url_input = url
-            break
+            if url[4] == 's' and url[5] == ':' and url[-3] == '.':
+                hostname = url.replace('https://www.','')
+                url_input = url
+                break
 
-        if url[4] == 's' and url[5] == ':' and url[-4] != '.':
-            hostname = url.replace('https://www.','')
-            url_input = url+'.com'
-            break
+            if url[4] == 's' and url[5] == ':' and url[-4] != '.':
+                hostname = url.replace('https://www.','')
+                url_input = url+'.com'
+                break
 
-        if url[4] == 's' and url[5] == ':' and url[-3] != '.':
-            hostname = url.replace('https://www.','')
-            url_input = url+'.com'
-            break
+            if url[4] == 's' and url[5] == ':' and url[-3] != '.':
+                hostname = url.replace('https://www.','')
+                url_input = url+'.com'
+                break
 
-        if url[3] == 'p' and url[4] == ':' and url[-4] == '.':
-            hostname = url.replace('http://www.','')
-            url_input = url
-            break
+            if url[3] == 'p' and url[4] == ':' and url[-4] == '.':
+                hostname = url.replace('http://www.','')
+                url_input = url
+                break
 
-        if url[3] == 'p' and url[4] == ':' and url[-3] == '.':
-            hostname = url.replace('http://www.','')
-            url_input = url
-            break
+            if url[3] == 'p' and url[4] == ':' and url[-3] == '.':
+                hostname = url.replace('http://www.','')
+                url_input = url
+                break
 
-        if url[3] == 'p' and url[4] == ':' and url[-4] != '.':
-            hostname = url.replace('http://www.','')
-            url_input = url+'.com'
-            break
+            if url[3] == 'p' and url[4] == ':' and url[-4] != '.':
+                hostname = url.replace('http://www.','')
+                url_input = url+'.com'
+                break
 
-        if url[3] == 'p' and url[4] == ':' and url[-3] != '.':
-            hostname = url.replace('http://www.','')
-            url_input = url+'.com'
-            break
+            if url[3] == 'p' and url[4] == ':' and url[-3] != '.':
+                hostname = url.replace('http://www.','')
+                url_input = url+'.com'
+                break
 
-        if url[2] == 'w' and url[3] == '.':
-            hostname = url.replace('www.','')
-            url_input = 'http://'+url
-            break
+            if url[2] == 'w' and url[3] == '.':
+                hostname = url.replace('www.','')
+                url_input = 'http://'+url
+                break
 
-        if url[4] != ':' and url[-3] == '.':
-            hostname = url
-            url_input = 'http://www.'+url
-            break
+            if url[4] != ':' and url[-3] == '.':
+                hostname = url
+                url_input = 'http://www.'+url
+                break
 
-        if url[4] != ':' and url[-4] == '.':
-            hostname = url
-            url_input = 'http://www.'+url
-            break
+            if url[4] != ':' and url[-4] == '.':
+                hostname = url
+                url_input = 'http://www.'+url
+                break
 
-        if url[4] != ':' and url[-3] != '.':
-            hostname = url+'.com'
-            url_input = 'http://www.'+url+'.com'
-            break
+            if url[4] != ':' and url[-3] != '.':
+                hostname = url+'.com'
+                url_input = 'http://www.'+url+'.com'
+                break
 
-        if url[4] != ':' and url[-4] != '.':
-            hostname = url+'.com'
-            url_input = 'http://www.'+url+'.com'
-            break
-    return hostname
+            if url[4] != ':' and url[-4] != '.':
+                hostname = url+'.com'
+                url_input = 'http://www.'+url+'.com'
+                break
+        return hostname
+    elif runCheck == '2':
+        for _ in url:
+            if url[4] == 's' and url[5] == ':':
+                hostname = url.replace('https://','')
+                url_input = url
+                break
+            if url[3] == 'p' and url[4] == ':':
+                hostname = url.replace('http://','')
+                url_input = url
+                break
+        return hostname
 
 ip_addr = ''
 def dns_check(hname):
